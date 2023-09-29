@@ -1,0 +1,86 @@
+.btn-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-color-mode-switch {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner {
+  margin: 0;
+  width: 98px; /* 30% smaller than 140px */
+  height: 28px; /* 30% smaller than 40px */
+  background-color: #3279d6;
+  border-radius: 18px; /* 30% smaller than 26px */
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px 0px 0px 20px;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+  content: attr(data-on);
+  position: absolute;
+  font-size: 14px; /* 30% smaller than 20px */
+  font-weight: 600;
+  top: 5px; /* 30% smaller than 7px */
+  right: 14px; /* 30% smaller than 20px */
+  color: #222;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+  content: attr(data-off);
+  width: 49px; /* 30% smaller than 70px */
+  height: 18px; /* 30% smaller than 25px */
+  background: #fff;
+  border-radius: 18px; /* 30% smaller than 26px */
+  position: absolute;
+  font-size: 14px; /* 30% smaller than 20px */
+  display: flex;
+  justify-content: center;
+  left: 1px; /* 30% smaller than 2px */
+  top: 1px; /* 30% smaller than 2px */
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 4px -1px #111; /* 30% smaller than 6px */
+  padding: 4px 0; /* 30% smaller than 5px */
+  color: #222;
+  font-weight: 600;
+}
+
+.btn-color-mode-switch input[type="checkbox"] {
+  cursor: pointer;
+  width: 35px; /* 30% smaller than 50px */
+  height: 18px; /* 30% smaller than 25px */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner {
+  background-color: #3279d6;
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:after {
+  content: attr(data-on);
+  left: 48px; /* 30% smaller than 68px */
+}
+
+.btn-color-mode-switch
+  input[type="checkbox"]:checked
+  + label.btn-color-mode-switch-inner:before {
+  content: attr(data-off);
+  right: auto;
+  left: 14px; /* 30% smaller than 20px */
+}
