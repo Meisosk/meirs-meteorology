@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+
+.week-weather {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.card {
+  padding: 0.7vw;
+  text-align: center;
+}
+
+.info-body {
+  background-color: rgba(0, 0, 0, 0.452);
+  border-radius: 16px;
+  height: 40vh;
+  width: 10vw;
+}
