@@ -42,19 +42,32 @@ body {
   font-weight: bold;
 }
 
-.week-weather {
+.search-result {
+  background-color: aliceblue;
+  color: black;
   display: flex;
-  justify-content: space-around;
+  width: 20vw;
+  padding: 5px;
 }
 
-.card {
-  padding: 1.2vw;
-  text-align: center;
+.search-result:first-child {
+  border-radius: 10px 10px 0px 0px;
 }
 
-.info-body {
-  background-color: rgba(0, 0, 0, 0.452);
-  border-radius: 16px;
-  height: 40vh;
-  width: 10vw;
+.search-result:last-child {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-and-submit {
+  display: flex;
+}
+
+.hidden {
+  display: none;
 }

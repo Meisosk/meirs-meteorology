@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
+import apiFetch from "./apiFetch";
 
 function WeatherBody(props) {
   const [Data, setData] = useState("Loading...");
 
+  async function getData(props) {
+    const data = await apiFetch(props.city, props.unit);
+    setData(data);
+  }
+
   useEffect(() => {
-    if (props.data) {
-      setData(props.data);
-    }
-  }, [props.data]);
+    getData(props);
+  }, [props]);
+
   return (
     <div className="main">
       <div className="city-weather-container">
@@ -17,43 +22,24 @@ function WeatherBody(props) {
             <span className="big-text">
               {Data !== "Loading..." ? Data.main.temp : Data}&deg;
             </span>
-            {Data !== "Loading..." ? Data.weather[0].description : Data}
+            {Data !== "Loading..." ? " " + Data.weather[0].description : Data}
           </p>
         </div>
         <div className="location-info">
-          <p>Sun 63-70</p>
-          <p>Air quality: 20 - Good</p>
-        </div>
-      </div>
-      <h2>7-day weather forecast</h2>
-      <div className="week-weather">
-        <div className="card">
-          <p>Sunday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Monday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Tuesday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Wednesday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Thursday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Friday</p>
-          <div className="info-body"></div>
-        </div>
-        <div className="card">
-          <p>Saturday</p>
-          <div className="info-body"></div>
+          <p>
+            {Data !== "Loading..."
+              ? "Todays high and low: " +
+                Data.main.temp_min +
+                " - " +
+                Data.main.temp_max
+              : Data}
+          </p>
+          <p>
+            {Data !== "Loading..."
+              ? "Feels like: " + Data.main.feels_like
+              : Data}
+            &deg;
+          </p>
         </div>
       </div>
     </div>
