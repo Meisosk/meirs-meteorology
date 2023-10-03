@@ -15,8 +15,17 @@ h2 {
 }
 
 .info-body {
-  background-color: rgba(0, 0, 0, 0.452);
   border-radius: 16px;
-  height: 40vh;
+  height: 28vh;
+  background-color: #89abbf78;
   width: 10vw;
+}
+
+.Clouds > .card > .info-body {
+  background-color: rgba(0, 0, 0, 0.452);
+}
+
+.Clear > .card > .info-body {
+  background-color: #89abbf78;
+  /* box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.945); */
 }

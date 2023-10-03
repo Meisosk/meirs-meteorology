@@ -1,23 +1,30 @@
-import React from "react";
 import "./weekWeather.css";
+import React, { useState, useEffect } from "react";
 
-function WeekWeather() {
-  // function WeatherBody(props) {
-  //   const [Data, setData] = useState("Loading...");
+function WeekWeather(props) {
+  const [Data, setData] = useState("Loading...");
 
-  //   async function getData(props) {
-  //     const data = await apiFetch(props.city, props.unit);
-  //     setData(data);
-  //   }
+  async function getData() {
+    const res = await fetch(
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${props.city}&key=ab1e33b55fe14f68809528b8ffb929f7&units=i`
+    );
+    const data = await res.json();
+    await setData(data);
+  }
 
-  //   useEffect(() => {
-  //     getData(props);
-  //   }, [props]);
+  useEffect(() => {
+    getData();
+    console.log(Data);
+  }, []);
 
   return (
     <div>
       <h2>7-day weather forecast</h2>
-      <div className="week-weather">
+      <div
+        className={`${
+          props.styles ? props.styles + " " + "week-weather" : "week-weather"
+        }`}
+      >
         <div className="card">
           <p>Sunday</p>
           <div className="info-body"></div>

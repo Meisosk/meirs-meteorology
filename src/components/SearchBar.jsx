@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import WeatherBody from "./WeatherBody";
-import WeekWeather from "./WeekWeather";
 import cities from "../data/cityList";
 
 const SearchBar = (props) => {
@@ -37,7 +36,12 @@ const SearchBar = (props) => {
         <br />
         <div className="submit-area">
           <div className="search-and-submit">
-            <input type="text" value={input} onChange={handleInputChange} />
+            <input
+              type="text"
+              value={input}
+              onChange={handleInputChange}
+              placeholder=" Enter city name"
+            />
             <br />
             <br />
             <button type="submit" onClick={handleSubmit}>
@@ -56,7 +60,6 @@ const SearchBar = (props) => {
           })}
         </div>
         <WeatherBody unit={props.unit} city={chosenCity} />
-        <WeekWeather unit={props.unit} city={chosenCity} />
       </div>
     </>
   );
