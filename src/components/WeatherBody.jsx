@@ -48,47 +48,44 @@ function WeatherBody(props) {
 
   return (
     <>
-      <div className="main">
-        <div
-          className={`${
-            Data.weather && Data.weather[0].main
-              ? Data.weather[0].main +
-                "-current" +
-                " " +
-                "city-weather-container"
-              : "city-weather-container"
-          }`}
-        >
-          <div className="location-temp">
-            <p className="big-text">
-              {Data !== "Loading..." ? Data.name : Data}
-            </p>
-            <p>
-              <span className="big-text">
-                {Data !== "Loading..." ? Data.main.temp : Data}&deg;
-              </span>
-              {Data !== "Loading..." ? " " + Data.weather[0].description : Data}
-            </p>
+      {Data !== "Loading..." ? (
+        <>
+          <div className="main">
+            <div
+              className={`${
+                Data.weather && Data.weather[0].main
+                  ? Data.weather[0].main +
+                    "-current" +
+                    " " +
+                    "city-weather-container"
+                  : "city-weather-container"
+              }`}
+            >
+              <div className="location-temp">
+                <p className="big-text">{Data.name}</p>
+                <p>
+                  <span className="big-text">{Data.main.temp}&deg;</span>{" "}
+                  {Data.weather[0].description}
+                </p>
+              </div>
+              <div className="location-info">
+                <p>
+                  Todays high and low: {Data.main.temp_min}&deg; -{" "}
+                  {Data.main.temp_max}&deg;
+                </p>
+                <p>Feels like: {Data.main.feels_like}&deg; </p>
+              </div>
+            </div>
           </div>
-          <div className="location-info">
-            <p>
-              {Data !== "Loading..."
-                ? "Todays high and low: " +
-                  Data.main.temp_min +
-                  " - " +
-                  Data.main.temp_max
-                : Data}
-            </p>
-            <p>
-              {Data !== "Loading..."
-                ? "Feels like: " + Data.main.feels_like
-                : Data}
-              &deg;
-            </p>
-          </div>
-        </div>
-      </div>
-      <WeekWeather unit={props.unit} city={props.city} styles={weatherDec} />
+          <WeekWeather
+            unit={props.unit}
+            city={props.city}
+            styles={weatherDec}
+          />
+        </>
+      ) : (
+        Data
+      )}
     </>
   );
 }

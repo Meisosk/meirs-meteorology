@@ -32,8 +32,6 @@ const SearchBar = (props) => {
   return (
     <>
       <div className="search-bar">
-        <h1>Find City</h1>
-        <br />
         <div className="submit-area">
           <div className="search-and-submit">
             <input
