@@ -16,16 +16,44 @@ h2 {
 
 .info-body {
   border-radius: 16px;
-  height: 28vh;
+  height: 42.5vh;
   background-color: #89abbf78;
   width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.Clouds > .card > .info-body {
+.Clouds > .card > .info-body,
+.Haze > .card > .info-body {
   background-color: rgba(0, 0, 0, 0.452);
 }
 
 .Clear > .card > .info-body {
   background-color: #89abbf78;
-  /* box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.945); */
+}
+
+.avg-temp {
+  font-size: 2.5vw;
+  margin-bottom: -25px;
+}
+
+img {
+  width: 80%;
+}
+
+.temps {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.high {
+  font-size: 2vw;
+  padding-right: 13px;
+}
+
+.low {
+  font-size: 1.6vw;
 }
