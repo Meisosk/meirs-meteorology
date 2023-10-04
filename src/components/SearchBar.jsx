@@ -23,8 +23,10 @@ const SearchBar = (props) => {
   };
 
   const handleSubmit = async () => {
-    setChosenCity(input);
-    setInput("");
+    if (input !== "") {
+      setChosenCity(input);
+      setInput("");
+    }
   };
 
   const topFour = Cities.slice(0, 4);

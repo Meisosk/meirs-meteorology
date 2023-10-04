@@ -9,7 +9,7 @@ import partlyCloudy from "../assets/partly-cloudy.png";
 import WeatherMoreInfo from "./WeatherMoreInfo";
 
 function WeekWeather(props) {
-  const [Data, setData] = useState("Loading...");
+  const [Data, setData] = useState("Loading..");
   const [week, setWeek] = useState([]);
   const [day, setDay] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -150,7 +150,7 @@ function WeekWeather(props) {
             const dayOfWeek = daysOfWeek[dayIndex];
             return (
               <div className="card" onClick={() => handelClick(index + 1)}>
-                <p>{dayOfWeek}</p>
+                <p className="day-name">{dayOfWeek}</p>
                 <div className="info-body">
                   <p className="avg-temp"> {day.temp}&deg;</p>
                   {icon(day)}

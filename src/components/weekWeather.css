@@ -5,8 +5,8 @@ h2 {
 .week-weather {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  /* margin-left: 10vw;
+  margin-right: 10vw; */
 }
 
 .card {
@@ -16,7 +16,7 @@ h2 {
 
 .info-body {
   border-radius: 16px;
-  height: 42.5vh;
+  height: 36.3vh;
   background-color: #89abbf78;
   width: 10vw;
   display: flex;
@@ -40,7 +40,7 @@ h2 {
 }
 
 img {
-  width: 80%;
+  width: 60%;
 }
 
 .temps {
@@ -56,4 +56,46 @@ img {
 
 .low {
   font-size: 1.6vw;
+}
+
+@media (max-width: 1000px) {
+  .info-body {
+    width: 12vw;
+  }
+  /* .week-weather {
+    margin-right: 8vw;
+  } */
+}
+
+@media (max-width: 720px) {
+  .info-body {
+    width: 70vw;
+    height: 5vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5px;
+  }
+  .week-weather {
+    flex-direction: column;
+  }
+  .week-weather:last-child {
+    margin-bottom: 35px;
+  }
+  img {
+    height: 3vh;
+    width: auto;
+  }
+  .card {
+    padding: 0px;
+    text-align: left;
+  }
+  .avg-temp {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  .week-weather {
+    padding-left: 5.5vw;
+  }
 }

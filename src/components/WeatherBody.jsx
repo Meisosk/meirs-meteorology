@@ -17,6 +17,9 @@ function WeatherBody(props) {
 
   async function getData(props) {
     const data = await apiFetch(props.city, props.unit);
+    if (data.cod === "404") {
+      return;
+    }
     setData(data);
   }
 
