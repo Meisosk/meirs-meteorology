@@ -64,19 +64,22 @@ function WeatherBody(props) {
                   : "city-weather-container"
               }`}
             >
-              <div className="location-temp">
-                <p className="big-text">{Data.name}</p>
-                <p>
-                  <span className="big-text">{Data.main.temp}&deg;</span>{" "}
-                  {Data.weather[0].description}
-                </p>
-              </div>
-              <div className="location-info">
-                <p>
-                  Todays high and low: {Data.main.temp_min}&deg; -{" "}
-                  {Data.main.temp_max}&deg;
-                </p>
-                <p>Feels like: {Data.main.feels_like}&deg; </p>
+              <h3>Todays weather</h3>
+              <div className="main-bot">
+                <div className="location-temp">
+                  <p className="big-text">{Data.name}</p>
+                  <p>
+                    <span className="big-text">{Data.main.temp}&deg;</span>{" "}
+                    {Data.weather[0].description}
+                  </p>
+                </div>
+                <div className="location-info">
+                  <p>
+                    High and low: {Data.main.temp_min}&deg; -{" "}
+                    {Data.main.temp_max}&deg;
+                  </p>
+                  <p>Feels like: {Data.main.feels_like}&deg; </p>
+                </div>
               </div>
             </div>
           </div>

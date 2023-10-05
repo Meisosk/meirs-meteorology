@@ -11,7 +11,9 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
+p {
+  margin: 0px 0px 1.5vh 0px;
+}
 .main {
   display: flex;
   align-items: center;
@@ -22,11 +24,13 @@ body {
   display: flex;
   border-radius: 11px;
   width: 80vw;
-  justify-content: space-between;
   margin: 3vh 0 5vh 0;
   height: 25vh;
   align-items: center;
-  font-size: 20px;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.308);
+  box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
+  flex-direction: column;
 }
 
 .location-temp {
@@ -39,7 +43,7 @@ body {
 }
 
 .big-text {
-  font-size: 2.3vw;
+  font-size: max(2.3vw, 36px);
   font-weight: bold;
 }
 
@@ -47,16 +51,19 @@ body {
   background-color: aliceblue;
   color: black;
   display: flex;
-  width: 20vw;
+  width: 96%;
   padding: 5px;
-}
-
-.search-result:first-child {
-  border-radius: 10px 10px 0px 0px;
 }
 
 .search-result:last-child {
   border-radius: 0px 0px 10px 10px;
+}
+
+.search-result-container {
+  position: absolute;
+  top: 87px;
+  width: 250px;
+  z-index: 2;
 }
 
 .search-bar {
@@ -67,16 +74,24 @@ body {
 
 .search-and-submit {
   display: flex;
+  box-shadow: 10px 5px 18px 1px rgba(0, 0, 0, 0.644);
+}
+
+.search-and-submit > input {
+  /* border-radius: 20px; */
+  border: none;
+  padding: 10px;
+}
+
+.search-and-submit > button {
+  /* border-radius: 20px; */
+  border: none;
+  padding: 10px;
+  /* margin-left: 10px; */
 }
 
 .hidden {
   display: none !important;
-}
-
-.Clouds-current,
-.Haze-current {
-  background-color: rgba(0, 0, 0, 0.308);
-  box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
 }
 
 .Clear-current {
@@ -126,4 +141,15 @@ body {
 
 .day-name {
   font-size: 1.8vw;
+}
+
+.main-bot {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h3 {
+  font-size: 23px;
 }
