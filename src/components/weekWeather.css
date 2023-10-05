@@ -23,10 +23,6 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.Clouds > .card > .info-body,
-.Haze > .card > .info-body {
   background-color: rgba(0, 0, 0, 0.452);
 }
 
@@ -92,10 +88,58 @@ img {
   .avg-temp {
     margin: 0px;
   }
+
+  .day-name {
+    font-size: max(2.55vw, 11px);
+    margin-bottom: 2px;
+  }
+  .city-weather-container {
+    font-size: max(4vw, 15px);
+    justify-content: center;
+  }
+  .big-text {
+    font-size: max(4vw, 15px);
+  }
+  .location-info {
+    padding-right: 10px;
+  }
+  .location-temp {
+    padding-left: 10px;
+  }
 }
 
 @media (max-width: 320px) {
   .week-weather {
     padding-left: 5.5vw;
+  }
+}
+
+@media (max-width: 720px) and (max-height: 810px) {
+  body {
+    background-size: auto 410%;
+  }
+}
+
+@media (max-width: 550px) {
+  .city-weather-container {
+    justify-content: space-around;
+  }
+}
+
+@media (max-height: 750px) {
+  .city-weather-container {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 550px) {
+  .city-weather-container {
+    height: 40vh;
+  }
+}
+
+@media (max-height: 410px) {
+  .city-weather-container {
+    height: 50vh;
   }
 }

@@ -40,7 +40,7 @@ const SearchBar = (props) => {
               type="text"
               value={input}
               onChange={handleInputChange}
-              placeholder=" Enter city name"
+              placeholder=" Enter city name..."
             />
             <br />
             <br />
@@ -48,16 +48,18 @@ const SearchBar = (props) => {
               Submit
             </button>
           </div>
-          {topFour.map((res) => {
-            return (
-              <div
-                className={`${input === "" ? "hidden" : "search-result"}`}
-                onClick={() => setInput(res)}
-              >
-                {res}
-              </div>
-            );
-          })}
+          <div className="search-result-container">
+            {topFour.map((res) => {
+              return (
+                <div
+                  className={`${input === "" ? "hidden" : "search-result"}`}
+                  onClick={() => setInput(res)}
+                >
+                  {res}
+                </div>
+              );
+            })}
+          </div>
         </div>
         <WeatherBody unit={props.unit} city={chosenCity} />
       </div>
