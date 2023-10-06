@@ -3,6 +3,8 @@ import apiFetch from "./apiFetch";
 import storm from "../assets/storm.jpg";
 import sunny from "../assets/sunny.jpg";
 import WeekWeather from "./WeekWeather";
+import rain from "../assets/rainy.jpg";
+import snow from "../assets/snowy.jpg";
 
 function WeatherBody(props) {
   const [Data, setData] = useState("Loading...");
@@ -10,9 +12,9 @@ function WeatherBody(props) {
 
   const weatherBackgrounds = {
     Clear: sunny,
-    Rain: "rainy.jpg",
+    Rain: rain,
     Clouds: storm,
-    Snow: "snowy.jpg",
+    Snow: snow,
   };
 
   async function getData(props) {

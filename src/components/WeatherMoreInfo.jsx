@@ -24,7 +24,6 @@ function WeatherMoreInfo(props) {
   }
 
   useEffect(() => {
-    console.log(props);
     setData(props.data.data);
     setDay(props.day);
     setUnit(props.unit);

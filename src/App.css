@@ -111,29 +111,17 @@ p {
   background-color: rgba(0, 0, 0, 0.856);
   box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
   transform: translateY(-25px);
-  animation: fade 0.3s ease-in-out forwards,
-    fade-out 0.3s ease-in-out reverse forwards;
+  animation: fade 0.3s ease-in-out forwards;
 }
 
 @keyframes fade {
   from {
     opacity: 0;
-    transform: translateY(-25px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-25px);
   }
 }
 
@@ -171,4 +159,28 @@ p {
 
 h3 {
   font-size: 23px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city-nav {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 4.5vw;
+  margin-bottom: 2vw;
+  text-shadow: rgba(0, 0, 0, 0.623) 3px 3px 5px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:last-child {
+  margin-right: 25vw;
 }
