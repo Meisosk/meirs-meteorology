@@ -9,7 +9,7 @@ import partlyCloudy from "../assets/partly-cloudy.png";
 import WeatherMoreInfo from "./WeatherMoreInfo";
 
 function WeekWeather(props) {
-  const [Data, setData] = useState("Loading...");
+  const [Data, setData] = useState("Loading..");
   const [week, setWeek] = useState([]);
   const [day, setDay] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -189,12 +189,5 @@ function WeekWeather(props) {
     </div>
   );
 }
-{
-  /* <a
-href="https://www.flaticon.com/free-icons/weather"
-title="weather icons"
->
-Weather icons created by fjstudio - Flaticon
-</a> */
-}
+
 export default WeekWeather;
