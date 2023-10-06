@@ -5,7 +5,11 @@ import cities from "../data/cityList";
 const SearchBar = (props) => {
   const [input, setInput] = useState("");
   const [Cities, setCities] = useState([]);
-  const [chosenCity, setChosenCity] = useState("new york");
+  const [chosenCity, setChosenCity] = useState(props.city || "new york");
+
+  useEffect(() => {
+    setChosenCity(props.city);
+  }, [props.city]);
 
   useEffect(() => {
     setCities(cities);
