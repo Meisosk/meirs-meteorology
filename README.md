@@ -2,6 +2,17 @@
 
 **Meir's Meteorology** is a weather application that allows users to check the weather forecast for various cities around the world. With a user-friendly interface and real-time weather data, it provides essential weather information at your fingertips.
 
+## Table of Contents
+
+- [Features](#Features)
+- [Usage](#Usage)
+- [Installation](#installation)
+- [License](#license)
+- [Technology Used](#technology-used)
+- [Contribute](#contribute)
+- [Questions](#questions)
+- [Contact](#contact)
+
 ## Features
 
 - **Current Weather**: Get up-to-date information about the current weather conditions, including temperature, description, high and low temperatures, and more.
@@ -12,9 +23,7 @@
 
 - **Unit Conversion**: Toggle between metric and imperial units to view temperature, wind speed, and other data in your preferred units.
 
-- **Background Images**: The app dynamically updates the background image based on the current weather condition, providing a visually immersive experience.
-
-## How to Use
+## Usage
 
 1. **Select Units**: Use the toggle switch to change between metric and imperial units for temperature and other weather data.
 
@@ -22,19 +31,70 @@
 
 3. **Search for a City**: Enter the name of a city in the search bar, and press "Submit" to see the weather information for that location.
 
-4. **View Detailed Weather**: Click on a city to access detailed weather information, including current conditions, high and low temperatures, precipitation, wind speed, humidity, and more.
+4. **View Detailed Weather**: Click on a day card to access detailed weather information, including current conditions, high and low temperatures, precipitation, wind speed, humidity, and more.
 
 ## Installation
 
 To run Meir's Meteorology locally, follow these steps:
 
-1. Clone the repository:
+1. Navigate to the project directory:
 
    ```bash
    git clone https://github.com/meisosk/meirs-meteorology.git
    ```
 
+2. Clone the repository:
+
+   ```bash
+   cd meirs-meteorology
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app should now be accessible at http://localhost:5173 in your web browser.
+
+### Technology Used:
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Vite
+- weatherbit API
+- openweathermap API
+
+### Contribution:
+
+To contribute to this project, clone this repo locally and commit your code on a separate branch.
+
+### Questions:
+
+If you have any questions regarding this app, feel free to contact me:
+
+#### Contact:
+
+- Meirsoskil@gmail.com
+
+## Credits
+
+- Day weather data is provided by [www.openweathermap.org].
+- Week weather data is provided by [www.weatherbit.io].
+
+- Weather icons created by [fjstudio](https://www.flaticon.com/free-icons/weather) - Flaticon.
+
 Currently, two official plugins are available:
+
+### This project was deployed at: https://meirs-meteorology.netlify.app/
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
