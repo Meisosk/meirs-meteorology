@@ -1,7 +1,7 @@
 .landing-main {
-  height: 100vh;
+  height: 98vh;
   width: 100vw;
-  background-image: url("../assets/rainiing-bg.jpg");
+  background-image: url("../assets/landing-bg.jpg");
   max-width: 100%;
   overflow-x: hidden;
   background-size: auto 170%;
@@ -16,14 +16,12 @@
   color: aliceblue;
   width: 250px;
   height: 340px;
-  /* margin: 200px auto; */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0)
   );
   backdrop-filter: blur(10px);
-  /* -webkit-backdrop-filter: blur(10px); */
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
@@ -33,30 +31,48 @@
   margin: 100px auto;
   position: relative;
   z-index: 1;
-  transform: skew(318deg, 192deg);
+
   box-shadow: 6px 6px 0px 2px rgba(255, 255, 255, 0.47);
   font-size: 25px;
+  opacity: 0;
+  transform: translateY(-50px) skew(318deg, 192deg);
+  animation: fadeInAndSlide 0.8s ease-in-out forwards;
 }
 
 .glass-container:first-child {
   margin-bottom: -566px;
 }
 
+.glass-container:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
 .glasses {
-  padding: 200px;
+  padding: 78px;
   margin-right: 17px;
 }
 
 .icon {
   margin-top: 20px;
   height: 100px;
-  width: fit-content;
+  width: 45%;
 }
 
 .app-name {
   color: aliceblue;
   font-size: 50px;
   margin-left: 5vw;
+}
+
+@keyframes fadeInAndSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) skew(318deg, 192deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skew(318deg, 192deg);
+  }
 }
 
 @media (max-width: 1000px) {
@@ -82,7 +98,7 @@
 @media (max-width: 720px) {
   .glass-container {
     width: 85px;
-    height: 100px;
+    height: 110px;
     font-size: 8px;
     box-shadow: 6px 6px 0px -1.5px rgba(255, 255, 255, 0.47);
     border-radius: 7px;
