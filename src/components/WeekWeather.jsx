@@ -9,14 +9,19 @@ import partlyCloudy from "../assets/partly-cloudy.png";
 import WeatherMoreInfo from "./WeatherMoreInfo";
 
 function WeekWeather(props) {
-  const [Data, setData] = useState("Loading..");
+  const [Data, setData] = useState("Loading...");
   const [week, setWeek] = useState([]);
   const [day, setDay] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
-  function handelClick(day) {
-    setDay(day);
-    setModalVisible(true);
+  function handelClick(index) {
+    if (day === index + 1) {
+      setModalVisible(false);
+      setDay(null);
+    } else {
+      setDay(index + 1);
+      setModalVisible(true);
+    }
   }
 
   let tempUnit = "i";
@@ -52,76 +57,77 @@ function WeekWeather(props) {
 
   useEffect(() => {
     getData(props, tempUnit);
+    setModalVisible(false);
   }, [props]);
 
   useEffect(() => {
     if (Data !== "Loading...") {
-      // const week = Data.data.slice(1, 8);
-      const week = [
-        {
-          datetime: "10-5-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-6-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 809,
-          },
-        },
-        {
-          datetime: "10-7-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-8-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 500,
-          },
-        },
-        {
-          datetime: "10-9-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-10-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 200,
-          },
-        },
-        {
-          datetime: "10-11-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 803,
-          },
-        },
-      ];
+      const week = Data.data.slice(1, 8);
+      // const week = [
+      //   {
+      //     datetime: "10-5-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-6-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 809,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-7-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-8-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 500,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-9-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-10-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 200,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-11-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 803,
+      //     },
+      //   },
+      // ];
       setWeek(week);
     }
   }, [Data]);
@@ -149,7 +155,11 @@ function WeekWeather(props) {
             const dayIndex = date.getDay();
             const dayOfWeek = daysOfWeek[dayIndex];
             return (
-              <div className="card" onClick={() => handelClick(index + 1)}>
+              <div
+                key={index}
+                className="card"
+                onClick={() => handelClick(index + 1)}
+              >
                 <p className="day-name">{dayOfWeek}</p>
                 <div className="info-body">
                   <p className="avg-temp"> {day.temp}&deg;</p>
@@ -163,14 +173,14 @@ function WeekWeather(props) {
             );
           })}
           {day ? (
-            // <WeatherMoreInfo
-            //   data={Data}
-            //   day={day}
-            //   styles={props.styles}
-            //   show={modalVisible}
-            // />
-            <h1>place holder</h1>
-          ) : null}
+            <WeatherMoreInfo
+              data={Data}
+              day={day}
+              styles={props.styles}
+              show={modalVisible}
+            />
+          ) : // <h1>place holder</h1>
+          null}
         </div>
       ) : (
         Data

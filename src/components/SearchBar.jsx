@@ -49,9 +49,10 @@ const SearchBar = (props) => {
             </button>
           </div>
           <div className="search-result-container">
-            {topFour.map((res) => {
+            {topFour.map((res, index) => {
               return (
                 <div
+                  key={index}
                   className={`${input === "" ? "hidden" : "search-result"}`}
                   onClick={() => setInput(res)}
                 >
