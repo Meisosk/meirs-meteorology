@@ -77,6 +77,10 @@ To run Meir's Meteorology locally, follow these steps:
 
 To contribute to this project, clone this repo locally and commit your code on a separate branch.
 
+### License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ### Questions:
 
 If you have any questions regarding this app, feel free to contact me:
@@ -92,9 +96,11 @@ If you have any questions regarding this app, feel free to contact me:
 
 - Weather icons created by [fjstudio](https://www.flaticon.com/free-icons/weather) - Flaticon.
 
-Currently, two official plugins are available:
+- Toggle switch created by [JaydipPrajapati1910](https://uiverse.io/JaydipPrajapati1910/neat-newt-18)
 
-### This project was deployed at: https://meirs-meteorology.netlify.app/
+## This project was deployed at: https://meirs-meteorology.netlify.app/
+
+Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
