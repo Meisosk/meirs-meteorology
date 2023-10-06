@@ -1,7 +1,10 @@
 body {
-  background-image: url("./assets/sunny.jpg");
   margin: 0;
   padding: 0;
+}
+
+.app-body {
+  background-image: url("./assets/sunny.jpg");
   background-size: auto 170%;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +14,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
 p {
   margin: 0px 0px 1.5vh 0px;
 }
@@ -53,6 +57,7 @@ p {
   display: flex;
   width: 96%;
   padding: 5px;
+  position: relative;
 }
 
 .search-result:last-child {
@@ -61,7 +66,7 @@ p {
 
 .search-result-container {
   position: absolute;
-  top: 87px;
+  /* top: 1030px; */
   width: 250px;
   z-index: 2;
 }
@@ -110,6 +115,8 @@ p {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.856);
+  box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
 }
 
 .title {
@@ -131,12 +138,6 @@ p {
 .Clear-modal {
   background-color: #8bb0c5;
   box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.945);
-}
-
-.Clouds-modal,
-.Haze-modal {
-  background-color: rgba(0, 0, 0, 0.856);
-  box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
 }
 
 .day-name {

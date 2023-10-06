@@ -39,7 +39,7 @@ function WeatherBody(props) {
   }, [weatherDec]);
 
   async function updateBackgroundBasedOnWeather(desc) {
-    const body = document.body;
+    const body = document.querySelector(".app-body");
 
     if (weatherBackgrounds.hasOwnProperty(desc)) {
       const backgroundImage = `url(${weatherBackgrounds[desc]})`;

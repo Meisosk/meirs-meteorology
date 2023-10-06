@@ -11,7 +11,7 @@ function UnitSwitch() {
     setUnit(newUnit);
   };
   return (
-    <div>
+    <div className="app-body">
       <div className="btn-container">
         <label className="switch btn-color-mode-switch">
           <input

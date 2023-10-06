@@ -58,9 +58,6 @@ img {
   .info-body {
     width: 12vw;
   }
-  /* .week-weather {
-    margin-right: 8vw;
-  } */
 }
 
 @media (max-width: 720px) {
