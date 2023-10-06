@@ -8,9 +8,7 @@ body {
   background-size: auto 170%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
   color: rgb(218, 236, 247);
-  /* width: 98.4vw; */
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -66,7 +64,6 @@ p {
 
 .search-result-container {
   position: absolute;
-  /* top: 1030px; */
   width: 250px;
   z-index: 2;
 }
@@ -83,16 +80,13 @@ p {
 }
 
 .search-and-submit > input {
-  /* border-radius: 20px; */
   border: none;
   padding: 10px;
 }
 
 .search-and-submit > button {
-  /* border-radius: 20px; */
   border: none;
   padding: 10px;
-  /* margin-left: 10px; */
 }
 
 .hidden {
@@ -107,7 +101,6 @@ p {
 .modal {
   height: 45vh;
   color: white;
-  /* text-align: center; */
   position: absolute;
   width: 60vw;
   margin-top: -20vh;
@@ -117,6 +110,31 @@ p {
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.856);
   box-shadow: 1px 1px 17px 1px rgba(255, 255, 255, 0.555);
+  transform: translateY(-25px);
+  animation: fade 0.3s ease-in-out forwards,
+    fade-out 0.3s ease-in-out reverse forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
 }
 
 .title {

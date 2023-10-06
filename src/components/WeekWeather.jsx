@@ -178,6 +178,7 @@ function WeekWeather(props) {
               day={day}
               styles={props.styles}
               show={modalVisible}
+              unit={props.unit}
             />
           ) : // <h1>place holder</h1>
           null}

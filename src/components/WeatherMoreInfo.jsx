@@ -5,6 +5,7 @@ function WeatherMoreInfo(props) {
   const [Data, setData] = useState("Loading...");
   const [day, setDay] = useState();
   const [modalVisible, setModalVisible] = useState(false);
+  const [unit, setUnit] = useState("i");
 
   function formatTime(timestamp) {
     const date = new Date(timestamp * 1000);
@@ -23,8 +24,10 @@ function WeatherMoreInfo(props) {
   }
 
   useEffect(() => {
+    console.log(props);
     setData(props.data.data);
     setDay(props.day);
+    setUnit(props.unit);
     setModalVisible(props.show);
   }, [props]);
 
@@ -42,11 +45,16 @@ function WeatherMoreInfo(props) {
               <div className="row">
                 <div className="pair">
                   <p className="title"> Visibility: </p>
-                  <p className="data">{Data[day].vis}</p>
+                  <p className="data">
+                    {Data[day].vis} {unit === "imperial" ? "mph" : "km"}
+                  </p>
                 </div>
                 <div className="pair">
                   <p className="title"> Precipitation: </p>
-                  <p className="data"> {Data[day].precip}</p>
+                  <p className="data">
+                    {" "}
+                    {Data[day].precip} {unit === "imperial" ? "inches" : "mm"}
+                  </p>
                 </div>
                 <div className="pair">
                   <p className="title"> UV index:</p>
@@ -56,7 +64,10 @@ function WeatherMoreInfo(props) {
               <div className="row">
                 <div className="pair">
                   <p className="title"> Wind:</p>
-                  <p className="data"> {Data[day].wind_spd} m/s</p>
+                  <p className="data">
+                    {" "}
+                    {Data[day].wind_spd} {unit === "imperial" ? "mph" : "m/s"}
+                  </p>
                 </div>
                 <div className="pair">
                   <p className="title"> Humidity: </p>
