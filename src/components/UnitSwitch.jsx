@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./unitSwitchStyles.css";
 
 import SearchBar from "./SearchBar";
@@ -7,10 +7,13 @@ function UnitSwitch() {
   const [unit, setUnit] = useState("imperial");
   const [city, setCity] = useState(null);
 
+  // useEffect(() => {
+  //   console.log(city);
+  // }, [city]);
+
   function handleClick(city) {
     setCity(city);
   }
-
   const handleToggle = () => {
     const newUnit = unit === "imperial" ? "metric" : "imperial";
     setUnit(newUnit);

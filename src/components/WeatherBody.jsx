@@ -4,7 +4,7 @@ import storm from "../assets/storm.jpg";
 import sunny from "../assets/sunny.jpg";
 import WeekWeather from "./WeekWeather";
 import rain from "../assets/rainy.jpg";
-import snow from "../assets/snowy.jpg";
+import snowy from "../assets/snowy.jpg";
 
 function WeatherBody(props) {
   const [Data, setData] = useState("Loading...");
@@ -14,7 +14,7 @@ function WeatherBody(props) {
     Clear: sunny,
     Rain: rain,
     Clouds: storm,
-    Snow: snow,
+    Snow: snowy,
   };
 
   async function getData(props) {
@@ -27,6 +27,7 @@ function WeatherBody(props) {
 
   useEffect(() => {
     getData(props);
+    console.log(props.city);
   }, [props]);
 
   useEffect(() => {
