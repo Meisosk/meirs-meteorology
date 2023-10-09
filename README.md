@@ -11,7 +11,7 @@
 - [Installation](#installation)
 - [License](#license)
 - [Technology Used](#technology-used)
-- [Contribute](#contribute)
+- [Contribute](#Contribution)
 - [Questions](#questions)
 - [Contact](#contact)
 
@@ -87,7 +87,7 @@ To contribute to this project, clone this repo locally and commit your code on a
 
 If you have any questions regarding this app, feel free to contact me:
 
-#### Contact:
+### Contact:
 
 - Meirsoskil@gmail.com
 
