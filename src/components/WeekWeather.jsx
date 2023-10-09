@@ -9,7 +9,7 @@ import partlyCloudy from "../assets/partly-cloudy.png";
 import WeatherMoreInfo from "./WeatherMoreInfo";
 
 function WeekWeather(props) {
-  const [Data, setData] = useState("Loading..");
+  const [Data, setData] = useState("Loading...");
   const [week, setWeek] = useState([]);
   const [day, setDay] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -49,7 +49,9 @@ function WeekWeather(props) {
 
   async function getData(props, unit) {
     const res = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${props.city}&key=ab1e33b55fe14f68809528b8ffb929f7&units=${unit}`
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${props.city}&key=${
+        import.meta.env.VITE_WEEK_API_KEY
+      }&units=${unit}`
     );
     const data = await res.json();
     await setData(data);
@@ -62,72 +64,72 @@ function WeekWeather(props) {
 
   useEffect(() => {
     if (Data !== "Loading...") {
-      // const week = Data.data.slice(1, 8);
-      const week = [
-        {
-          datetime: "10-5-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-6-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 809,
-          },
-        },
-        {
-          datetime: "10-7-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-8-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 500,
-          },
-        },
-        {
-          datetime: "10-9-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-10-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 200,
-          },
-        },
-        {
-          datetime: "10-11-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 803,
-          },
-        },
-      ];
+      const week = Data.data.slice(1, 8);
+      // const week = [
+      //   {
+      //     datetime: "10-5-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-6-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 809,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-7-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-8-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 500,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-9-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-10-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 200,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-11-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 803,
+      //     },
+      //   },
+      // ];
       setWeek(week);
     }
   }, [Data]);
@@ -173,15 +175,15 @@ function WeekWeather(props) {
             );
           })}
           {day ? (
-            // <WeatherMoreInfo
-            //   data={Data}
-            //   day={day}
-            //   styles={props.styles}
-            //   show={modalVisible}
-            //   unit={props.unit}
-            // />
-            <h1>place holder</h1>
-          ) : null}
+            <WeatherMoreInfo
+              data={Data}
+              day={day}
+              styles={props.styles}
+              show={modalVisible}
+              unit={props.unit}
+            />
+          ) : // <h1>place holder</h1>
+          null}
         </div>
       ) : (
         Data

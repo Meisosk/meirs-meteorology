@@ -98,7 +98,7 @@ If you have any questions regarding this app, feel free to contact me:
 
 - Toggle switch created by [JaydipPrajapati1910](https://uiverse.io/JaydipPrajapati1910/neat-newt-18)
 
-## This project was deployed at: https://meirs-meteorology.netlify.app/
+### This project was deployed at: https://meirs-meteorology.netlify.app/
 
 Currently, two official plugins are available:
 
