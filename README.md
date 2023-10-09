@@ -2,6 +2,8 @@
 
 **Meir's Meteorology** is a weather application that allows users to check the weather forecast for various cities around the world. With a user-friendly interface and real-time weather data, it provides essential weather information at your fingertips.
 
+## you can watch a website walkthrough here https://watch.screencastify.com/v/8FzYyvtsdUXUhB3g93Cy
+
 ## Table of Contents
 
 - [Features](#Features)
