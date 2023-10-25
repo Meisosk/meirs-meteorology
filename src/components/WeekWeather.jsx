@@ -54,13 +54,13 @@ function WeekWeather(props) {
       }&key=${import.meta.env.VITE_WEEK_API_KEY}&units=${unit}`
     );
     const data = await res.json();
-    await setData(data);
+    setData(data);
   }
 
   useEffect(() => {
     getData(props, tempUnit);
     setModalVisible(false);
-  }, [props]);
+  }, [props.city]);
 
   useEffect(() => {
     if (Data !== "Loading...") {
