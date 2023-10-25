@@ -27,7 +27,6 @@ function WeatherBody(props) {
 
   useEffect(() => {
     getData(props);
-    console.log(props.city);
   }, [props]);
 
   useEffect(() => {

@@ -64,72 +64,72 @@ function WeekWeather(props) {
 
   useEffect(() => {
     if (Data !== "Loading...") {
-      // const week = Data.data.slice(1, 8);
-      const week = [
-        {
-          datetime: "10-5-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-6-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 809,
-          },
-        },
-        {
-          datetime: "10-7-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-8-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 500,
-          },
-        },
-        {
-          datetime: "10-9-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 800,
-          },
-        },
-        {
-          datetime: "10-10-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 200,
-          },
-        },
-        {
-          datetime: "10-11-2023",
-          temp: 70,
-          high_temp: 80,
-          low_temp: 60,
-          weather: {
-            code: 803,
-          },
-        },
-      ];
+      const week = Data.data.slice(1, 8);
+      // const week = [
+      //   {
+      //     datetime: "10-5-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-6-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 809,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-7-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-8-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 500,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-9-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 800,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-10-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 200,
+      //     },
+      //   },
+      //   {
+      //     datetime: "10-11-2023",
+      //     temp: 70,
+      //     high_temp: 80,
+      //     low_temp: 60,
+      //     weather: {
+      //       code: 803,
+      //     },
+      //   },
+      // ];
       setWeek(week);
     }
   }, [Data]);
